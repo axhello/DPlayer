@@ -26,6 +26,7 @@ class Controller {
         this.initThumbnails();
         this.initPlayedBar();
         this.initFullButton();
+        this.initWideButton();
         this.initQualityButton();
         this.initScreenshotButton();
         this.initSubtitleButton();
@@ -171,6 +172,24 @@ class Controller {
         this.player.template.webFullButton.addEventListener('click', () => {
             this.player.fullScreen.toggle('web');
         });
+    }
+
+    initWideButton () {
+        if (this.player.options.widescreen) {
+            this.player.template.webWideButton.addEventListener('click', () => {
+
+                if (typeof this.player.options.widescreen !== 'object') {
+                    console.error('widescreen 必须是对象');
+                    return false;
+                }
+                if (!this.player.options.widescreen.event && typeof this.player.options.widescreen.event !== 'function') {
+                    console.error('widescreen 缺少event回调函数');
+                }
+                console.log('widescreen 正在执行');
+            });
+
+
+        }
     }
 
     initVolumeButton () {

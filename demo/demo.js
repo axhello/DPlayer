@@ -57,6 +57,7 @@ function initPlayers () {
     // dp1
     window.dp1 = new DPlayer({
         container: document.getElementById('dplayer1'),
+        preload: 'auto',
         screenshot: true,
         video: {
             quality: [{
@@ -77,7 +78,12 @@ function initPlayers () {
                 text: 'custom menu',
                 link: '#'
             }
-        ]
+        ],
+        widescreen: {
+            event: function () {
+                console.log('widescreen 正在执行');
+            }
+        }
     });
 
     // dp2
