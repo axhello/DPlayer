@@ -519,6 +519,19 @@
                 }
             }
         }
+        .dplayer-wide {
+            display: inline-block;
+            height: 100%;
+            position: relative;
+            .widescreen {
+                display: inline-block;
+            }
+        }
+        .dplayer-full-in {
+            display: inline-block;
+            height: 100%;
+            position: relative;
+        }
         .dplayer-full {
             display: inline-block;
             height: 100%;

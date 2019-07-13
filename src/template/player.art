@@ -98,6 +98,11 @@
         {{ /if }}
     </div>
     <div class="dplayer-icons dplayer-icons-right">
+        {{ if options.screenshot }}
+        <div class="dplayer-icon dplayer-camera-icon" data-balloon="{{ tran('Screenshot') }}" data-balloon-pos="up">
+            <span class="dplayer-icon-content">{{@ icons.camera }}</span>
+        </div>
+        {{ /if }}
         {{ if options.video.quality }}
         <div class="dplayer-quality">
             <button class="dplayer-icon dplayer-quality-icon">{{ options.video.quality[options.video.defaultQuality].name }}</button>
@@ -108,11 +113,6 @@
                 {{ /each }}
                 </div>
             </div>
-        </div>
-        {{ /if }}
-        {{ if options.screenshot }}
-        <div class="dplayer-icon dplayer-camera-icon" data-balloon="{{ tran('Screenshot') }}" data-balloon-pos="up">
-            <span class="dplayer-icon-content">{{@ icons.camera }}</span>
         </div>
         {{ /if }}
         <div class="dplayer-comment">
@@ -191,10 +191,17 @@
                 </div>
             </div>
         </div>
-        <div class="dplayer-full">
+        <div class="dplayer-wide">
+            <button class="dplayer-icon dplayer-widescreen-icon" data-balloon="{{ tran('Widescreen') }}" data-balloon-pos="up">
+                <span class="dplayer-icon-content widescreen widescreen-on">{{@ icons.widescreenOn }}</span>
+            </button>
+        </div>
+        <div class="dplayer-full-in">
             <button class="dplayer-icon dplayer-full-in-icon" data-balloon="{{ tran('Web full screen') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.fullWeb }}</span>
             </button>
+        </div>
+        <div class="dplayer-full">
             <button class="dplayer-icon dplayer-full-icon" data-balloon="{{ tran('Full screen') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.full }}</span>
             </button>

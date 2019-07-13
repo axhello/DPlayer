@@ -57,21 +57,27 @@ function initPlayers () {
     // dp1
     window.dp1 = new DPlayer({
         container: document.getElementById('dplayer1'),
-        preload: 'none',
         screenshot: true,
         video: {
-            url: 'https://api.dogecloud.com/player/get.mp4?vcode=5ac682e6f8231991&userId=17&ext=.mp4',
-            pic: 'https://i.loli.net/2019/06/06/5cf8c5d9c57b510947.png',
-            thumbnails: 'https://i.loli.net/2019/06/06/5cf8c5d9cec8510758.jpg'
+            quality: [{
+                name: '1080p',
+                url: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+                pic: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+                type: 'auto'
+            }, {
+                name: '720p',
+                url: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4',
+                pic: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg',
+                type: 'auto'
+            }],
+            defaultQuality: 0,
         },
-        subtitle: {
-            url: 'https://moeplayer.b0.upaiyun.com/dplayer/hikarunara.vtt'
-        },
-        danmaku: {
-            id: '9E2E3368B56CDBB4',
-            api: 'https://api.prprpr.me/dplayer/',
-            addition: ['https://cn-south-17-dplayer-49648867.oss.dogecdn.com/1678963.json']
-        }
+        contextmenu: [
+            {
+                text: 'custom menu',
+                link: '#'
+            }
+        ]
     });
 
     // dp2
