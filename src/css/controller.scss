@@ -322,6 +322,23 @@
             vertical-align: middle;
             box-sizing: border-box;
             display: inline-block;
+            &.on {
+                .widescreen-on,
+                .full-web-on,
+                .full-on {
+                    display: none
+                }
+                .widescreen-off,
+                .full-web-off,
+                .full-off {
+                    display: inline
+                }
+            }
+            .widescreen-off,
+            .full-web-off,
+            .full-off {
+                display: none
+            }
             .dplayer-icon-content {
                 transition: all .2s ease-in-out;
                 opacity: .8;

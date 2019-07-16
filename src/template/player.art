@@ -191,21 +191,20 @@
                 </div>
             </div>
         </div>
-        <div class="dplayer-wide">
-            <button class="dplayer-icon dplayer-widescreen-icon" data-balloon="{{ tran('Widescreen') }}" data-balloon-pos="up">
-                <span class="dplayer-icon-content widescreen widescreen-on">{{@ icons.widescreenOn }}</span>
-            </button>
-        </div>
-        <div class="dplayer-full-in">
-            <button class="dplayer-icon dplayer-full-in-icon" data-balloon="{{ tran('Web full screen') }}" data-balloon-pos="up">
-                <span class="dplayer-icon-content">{{@ icons.fullWeb }}</span>
-            </button>
-        </div>
-        <div class="dplayer-full">
-            <button class="dplayer-icon dplayer-full-icon" data-balloon="{{ tran('Full screen') }}" data-balloon-pos="up">
-                <span class="dplayer-icon-content">{{@ icons.full }}</span>
-            </button>
-        </div>
+        {{ if options.widescreen }}
+         <button class="dplayer-icon dplayer-widescreen-icon" data-balloon="{{ tran('Widescreen') }}" data-balloon-pos="up">
+            <span class="dplayer-icon-content widescreen-on">{{@ icons.widescreenOn }}</span>
+            <span class="dplayer-icon-content widescreen-off">{{@ icons.widescreenOff }}</span>
+        </button>
+        {{ /if }}
+        <button class="dplayer-icon dplayer-full-in-icon" data-balloon="{{ tran('Web full screen') }}" data-balloon-pos="up">
+            <span class="dplayer-icon-content full-web-on"> {{@ icons.fullWebOn }}</span>
+            <span class="dplayer-icon-content full-web-off"> {{@ icons.fullWebOff }}</span>
+        </button>
+        <button class="dplayer-icon dplayer-full-icon" data-balloon="{{ tran('Full screen') }}" data-balloon-pos="up">
+            <span class="dplayer-icon-content full-on"> {{@ icons.fullOn }}</span>
+            <span class="dplayer-icon-content full-off"> {{@ icons.fullOff }}</span>
+        </button>
     </div>
     <div class="dplayer-bar-wrap">
         <div class="dplayer-bar-time hidden">00:00</div>

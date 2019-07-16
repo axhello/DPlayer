@@ -167,25 +167,28 @@ class Controller {
     initFullButton () {
         this.player.template.browserFullButton.addEventListener('click', () => {
             this.player.fullScreen.toggle('browser');
+            // this.player.template.browserFullButton.classList.toggle('on');
         });
 
         this.player.template.webFullButton.addEventListener('click', () => {
             this.player.fullScreen.toggle('web');
+            // this.player.template.webFullButton.classList.toggle('on');
         });
     }
 
     initWideButton () {
         if (this.player.options.widescreen) {
             this.player.template.webWideButton.addEventListener('click', () => {
-
                 if (typeof this.player.options.widescreen !== 'object') {
                     console.error('widescreen 必须是对象');
                     return false;
                 }
-                if (!this.player.options.widescreen.event && typeof this.player.options.widescreen.event !== 'function') {
+                if (this.player.options.widescreen.event && typeof this.player.options.widescreen.event === 'function') {
+                    this.player.options.widescreen.event();
+                    // this.player.template.webWideButton.classList.toggle('on');`
+                } else {
                     console.error('widescreen 缺少event回调函数');
                 }
-                console.log('widescreen 正在执行');
             });
 
 
