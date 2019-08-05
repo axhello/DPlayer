@@ -98,11 +98,6 @@
         {{ /if }}
     </div>
     <div class="dplayer-icons dplayer-icons-right">
-        {{ if options.screenshot }}
-        <div class="dplayer-icon dplayer-camera-icon" data-balloon="{{ tran('Screenshot') }}" data-balloon-pos="up">
-            <span class="dplayer-icon-content">{{@ icons.camera }}</span>
-        </div>
-        {{ /if }}
         {{ if options.video.quality }}
         <div class="dplayer-quality">
             <button class="dplayer-icon dplayer-quality-icon">{{ options.video.quality[options.video.defaultQuality].name }}</button>
@@ -113,6 +108,11 @@
                 {{ /each }}
                 </div>
             </div>
+        </div>
+        {{ /if }}
+        {{ if options.screenshot }}
+        <div class="dplayer-icon dplayer-camera-icon" data-balloon="{{ tran('Screenshot') }}" data-balloon-pos="up">
+            <span class="dplayer-icon-content">{{@ icons.camera }}</span>
         </div>
         {{ /if }}
         <div class="dplayer-comment">

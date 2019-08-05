@@ -13,7 +13,7 @@
     left: 0;
     right: 0;
     height: 41px;
-    padding: 0 20px;
+    padding: 0 10px;
     user-select: none;
     transition: all 0.3s ease;
     &.dplayer-controller-comment {
@@ -29,7 +29,7 @@
         cursor: pointer;
         position: absolute;
         bottom: 33px;
-        width: calc(100% - 40px);
+        width: calc(100% - 20px);
         height: 3px;
         &:hover {
             .dplayer-bar .dplayer-played .dplayer-thumb {
@@ -284,12 +284,13 @@
             }
         }
         &.dplayer-icons-left {
+            left: 10px;
             .dplayer-icon {
                 padding: 7px;
             }
         }
         &.dplayer-icons-right {
-            right: 20px;
+            right: 10px;
             .dplayer-icon {
                 padding: 8px;
             }
@@ -361,7 +362,7 @@
                 padding-top: 8.5px;
             }
             &.dplayer-volume-icon {
-                width: 43px;
+                width: 35px;
             }
         }
         .dplayer-volume {

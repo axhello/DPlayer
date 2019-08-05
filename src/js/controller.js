@@ -253,10 +253,12 @@ class Controller {
 
                 let dataURL;
                 canvas.toBlob((blob) => {
+                    // const dateTime = new Date().getTime();
+                    const dateTime = this.player.video.currentTime.toFixed(0);
                     dataURL = URL.createObjectURL(blob);
                     const link = document.createElement('a');
                     link.href = dataURL;
-                    link.download = 'DPlayer.png';
+                    link.download = `DPlayer-${dateTime}.png`;
                     link.style.display = 'none';
                     document.body.appendChild(link);
                     link.click();
